@@ -1,4 +1,4 @@
-/* Reflexil Copyright (c) 2007-2017 Sebastien Lebreton
+/* Reflexil Copyright (c) 2007-2018 Sebastien Lebreton
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -136,11 +136,11 @@ namespace Reflexil.Compilation
 			WriteMethodsStubs(mdef, methods, RegionStart, RegionEnd);
 		}
 
-		protected override void WriteDefaultNamespaces()
+		protected override void WriteNamespaces()
 		{
 			Write(RegionStart);
 			WriteLine("\" Imports \"");
-			foreach (var item in DefaultNamespaces)
+			foreach (var item in Namespaces)
 			{
 				Write(CSharpKeywords.@using, SpaceSurrounder.After);
 				Write(item);
